@@ -1,5 +1,6 @@
 package com.classicmodels.domain.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,10 +27,12 @@ public class ProductLine {
 	@Id
 	@EqualsAndHashCode.Include
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private String id;
 	
+	@Column(columnDefinition = "varchar(2000)")
 	private String textDescription;
 	
+	@Column(columnDefinition = "varchar(2000)")
 	private String htmlDescription;
 	
 	private byte[] image;

@@ -25,7 +25,7 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-@Table(name = "products")
+@Table(name = "orderdetails")
 public class OrderDetail {
 
 	@Id

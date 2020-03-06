@@ -39,11 +39,11 @@ public class Employee {
 	private String email;
 	
 	@ManyToOne
-	@JoinColumn(nullable = false, name = "officeCode")
+	@JoinColumn(name = "officeCode")
 	private Office office;
 	
 	@ManyToOne
-	@JoinColumn(nullable = false)
+	@JoinColumn(name = "reportsTo")
 	private Employee reportsTo;
 	
 	private String jobTitle;
