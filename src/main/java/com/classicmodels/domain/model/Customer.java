@@ -1,5 +1,6 @@
 package com.classicmodels.domain.model;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -40,17 +41,8 @@ public class Customer {
 	
 	private String phone;
 	
-	private String addressLine1;
-	
-	private String addressLine2;
-	
-	private String city;
-	
-	private String state;
-	
-	private String postalCode;
-	
-	private String country;
+	@Embedded
+	private Address address;
 	
 	@ManyToOne
 	@JoinColumn(nullable = true, name="salesRepEmployeeNumber")
