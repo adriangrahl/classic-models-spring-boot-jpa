@@ -2,8 +2,6 @@ package com.classicmodels.domain.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -26,13 +24,12 @@ public class ProductLine {
 
 	@Id
 	@EqualsAndHashCode.Include
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String id;
 	
-	@Column(columnDefinition = "varchar(2000)")
+	@Column(columnDefinition = "VARCHAR(2000)")
 	private String textDescription;
 	
-	@Column(columnDefinition = "varchar(2000)")
+	@Column(columnDefinition = "VARCHAR(2000)")
 	private String htmlDescription;
 	
 	private byte[] image;

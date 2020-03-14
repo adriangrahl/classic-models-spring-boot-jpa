@@ -1,9 +1,11 @@
 package com.classicmodels.domain.model;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -18,34 +20,26 @@ import lombok.Setter;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Getter
 @Setter
+@Builder
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-@Table(name = "products")
-public class Product {
-
-	@Id
-	@EqualsAndHashCode.Include
-	private String id;
+@Table(name = "payments")
+public class Payment {
 	
-	private String productName;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	
 	@ManyToOne
-	@JoinColumn(name = "productLine", nullable = false)
-	private ProductLine productLine;
+	@JoinColumn(name = "customerNumber", nullable = false)
+	private Customer customer;
 	
-	private String productScale;
+	private String checkNumber;
 	
-	private String productVendor;
+	private Date paymentDate;
 	
-	@Column(columnDefinition = "VARCHAR(2000)")
-	private String productDescription;
-	
-	private Integer quantityInStock;
-	
-	private BigDecimal buyPrice;
-	
-	private Double MSRP;
+	private BigDecimal amount;
+
 }

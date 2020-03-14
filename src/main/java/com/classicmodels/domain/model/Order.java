@@ -1,6 +1,6 @@
 package com.classicmodels.domain.model;
 
-import java.time.OffsetDateTime;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,9 +32,11 @@ public class Order {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private OffsetDateTime orderDate;
+	private Date orderDate;
 	
-	private OffsetDateTime requiredDate;
+	private Date requiredDate;
+	
+	private Date shippedDate;
 	
 	private String status;
 	
