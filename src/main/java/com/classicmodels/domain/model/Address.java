@@ -1,6 +1,8 @@
 package com.classicmodels.domain.model;
 
 import javax.persistence.Embeddable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,12 +22,10 @@ public class Address {
 	
 	private String addressLine2;
 	
-	private String city;
-	
-	private String state;
-	
 	private String postalCode;
 	
-	private String country;
+	@ManyToOne
+	@JoinColumn(name = "cityCode")
+	private City city;
 	
 }
